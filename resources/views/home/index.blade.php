@@ -59,7 +59,7 @@
                 <h1 class="text-white fs-5 fs-xl-6">{{ $header->title }}</h1>
                 <p class="text-white py-lg-3 py-2">{{ $header->description }}</p>
                 <div class="d-sm-flex align-items-center gap-3">
-                  <button class="py-3 w-lg-50 w-75 hover-2">Get Started</button>
+                  <button class="py-3 w-lg-50 w-md-50 w-75 hover-2">Get Started</button>
                 </div>
               </div>
               <div class="col-lg-6 text-center text-lg-end mt-3 mt-lg-0"><img class="img-fluid" src="assets/img/hero/{{ $header->image }}" alt="" /></div>
@@ -90,92 +90,30 @@
         <section class="container">
           <div class="row p-0  mt-5">
           <!-- <img class="img-fluid w-50 imgS" src="assets/img/blog/business-people-pointing-tablet.jpg" alt="" /> -->
-          <h1 class="fw-bold text-center text-dark" id="ourservice">Our Serice</h1>
-          <div class="container-service" >
+          <h1 class="fw-bold text-center text-dark" id="ourservice"></h1>
+          <div class="container-service">
             <div class="icon">
-                <div class="imgbx active" style="--i:1;" data-id="content1">
-                    <img src="img/application.png" alt="">
+              @foreach ($services as $index => $service)
+                <div class="imgbx" style="--i:{{ $index + 1 }};" data-id="content{{ $index + 1 }}">
+                  <img src="{{ asset('img/'.$service['image']) }}" alt="">
                 </div>
-                <div class="imgbx" style="--i:2;" data-id="content2">
-                    <img src="img/mobile-app.png" alt="">
-                </div>
-                <div class="imgbx" style="--i:3;" data-id="content3">
-                    <img src="img/analysis.png" alt="">
-                </div>
-                <div class="imgbx" style="--i:4;" data-id="content4">
-                    <img src="img/dashboard.png" alt="">
-                </div>
-                <div class="imgbx" style="--i:5;" data-id="content5">
-                    <img src="img/global-network.png" alt="">
-                </div>
-                <div class="imgbx" style="--i:6;" data-id="content6">
-                    <img src="img/ai.png" alt="">
-                </div>
+              @endforeach
             </div>
-            
             <div class="content">
-                <div class="contentbx active" id="content1">
-                    <div class="card">
-                        <div class="imgbx">
-                            <img src="img/application.png" alt="">
-                        </div>
-                        <div class="textbx">
-                            <h2 class="text-dark">Web Application<br></h2>
-                        </div>
+              @foreach ($services as $index => $service)
+                <div class="contentbx {{ $index === 0 ? 'active' : '' }}" id="content{{ $index + 1 }}">
+                  <div class="card">
+                    <div class="imgbx">
+                      <img src="{{ asset('img/'.$service['image']) }}" alt="">
                     </div>
-                </div>
-                <div class="contentbx" id="content2">
-                    <div class="card">
-                        <div class="imgbx">
-                            <img src="img/mobile-app.png" alt="">
-                        </div>
-                        <div class="textbx">
-                            <h2 class="text-dark">Mobile Application<br></h2>
-                        </div>
+                    <div class="textbx">
+                      <h2 class="text-dark">{{ $service['title'] }}<br></h2>
                     </div>
+                  </div>
                 </div>
-                <div class="contentbx" id="content3">
-                    <div class="card">
-                        <div class="imgbx">
-                            <img src="img/analysis.png" alt="">
-                        </div>
-                        <div class="textbx">
-                            <h2 class="text-dark">Data Platform<br></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="contentbx" id="content4">
-                    <div class="card">
-                        <div class="imgbx">
-                            <img src="img/dashboard.png" alt="">
-                        </div>
-                        <div class="textbx">
-                            <h2 class="text-dark">Data Analytics<br></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="contentbx" id="content5">
-                    <div class="card">
-                        <div class="imgbx">
-                            <img src="img/global-network.png" alt="">
-                        </div>
-                        <div class="textbx">
-                            <h2 class="text-dark">infrastructure<br></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="contentbx" id="content6">
-                    <div class="card">
-                        <div class="imgbx">
-                            <img src="img/ai.png" alt="">
-                        </div>
-                        <div class="textbx">
-                            <h2 class="text-dark">AR/VR<br></h2>
-                        </div>
-                    </div>
-                </div>
+              @endforeach
             </div>
-        </div>
+          </div>          
         </div>
           <!-- end of .container-->
   

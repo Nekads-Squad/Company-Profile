@@ -296,3 +296,111 @@ figure {
     color: #fff;
     font-weight: 300;
 }  */
+
+@media only screen and (max-width: 600px) {
+
+    .container-service {
+        position: relative;
+        width: 318px;
+        height: 318px;
+        border: 2px solid #171e64;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    
+    .container-service .icon {
+        position: relative;
+        left: -55%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .container-service .icon .imgbx {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transition: 0.5s;
+        border: 1px solid #fff;
+        box-shadow: 0 0 0 4px #222, 0 0 0 6px #fff;
+        transform: rotate(calc(360deg/6 * var(--i)));
+        transform-origin: 184px;
+        overflow: hidden;
+        z-index: 100;
+        /* animation: muter 3s linear infinite; */
+    }
+
+    .container-service .icon .imgbx.active {
+        box-shadow: 0 0 0 6px #222, 0 0 0 12px #ff1d50;
+    
+    }
+    
+    .container-service .icon .imgbx img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        transform: rotate(calc(-360deg/6 * var(--i)));
+        transition: 0.5s;
+        filter: grayscale(1);
+    }
+    
+    .container-service .icon .imgbx.active img {
+        filter: grayscale(0);
+    }
+
+    .content {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .content::before {
+        content: '';
+        position: absolute;
+        /* width: 200px; */
+        /* height: 200px; */
+        inset: 60px;
+        border: 4px solid transparent;
+        border-left: 4px solid #2196f3;
+        border-right: 4px solid #ff1d50;
+        border-radius: 50%;
+        animation: animate1 5s linear infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    @keyframes animate1 {
+        0%{
+            rotate: 0deg;
+        }
+    
+        100%{
+            rotate: 360deg;
+        }
+    }
+    
+    .content::after {
+        content: '';
+        position: absolute;
+        inset: 20px;
+        border: 4px solid transparent;
+        border-left: 4px solid #ff1d50;
+        border-right: 4px solid #2196f3;
+        border-radius: 50%;
+        animation: animate2 2.5s linear infinite ;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+}

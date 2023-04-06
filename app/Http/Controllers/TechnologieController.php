@@ -58,10 +58,7 @@ class TechnologieController extends Controller
      * @param Illuminate\Http\Request
      * @return Illuminate\Http\Respose
      */
-    public function show(Technologie $technologie)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
