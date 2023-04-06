@@ -9,6 +9,7 @@ use App\Models\Portfolio;
 use App\Models\Partner;
 use App\Models\Technologie;
 use App\Models\Artikel;
+use App\Models\Contact;
 
 class HomeController extends Controller
 {
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $partners = Partner::all();
         $technologies = Technologie::all();
         $artikels = Artikel::all();
+        $contact = Contact::all();
 
         return view('home.index', compact(
             'headers',
@@ -28,6 +30,7 @@ class HomeController extends Controller
             'partners',
             'technologies',
             'artikels',
+            'contact',
         ));
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HeaderController;
@@ -27,3 +28,6 @@ Route::resource('portfolios', PortfolioController::class)->middleware('auth');
 Route::resource('partners', PartnerController::class)->middleware('auth');
 Route::resource('technologies', TechnologieController::class)->middleware('auth');
 Route::resource('artikels', ArtikelController::class)->middleware('auth');
+
+Route::get('/contact', [ContactController::class, 'index'])->middleware('auth');
+Route::put('/contact/{id}', [ContactController::class, 'update'])->middleware('auth');

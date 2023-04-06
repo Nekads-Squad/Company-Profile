@@ -350,14 +350,16 @@
           </div>
           <div class="col-lg-2 col-sm-4">
             <h3 class="fw-bold fs-1 mt-5 mb-4 text-dark">Contact us</h3>
+            @foreach ($contact as $index => $contact)
             <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-dark-opacity" href="#">EightyEight@Kasablanka</a></li>
-              <li class="mb-3"><a class="text-dark-opacity" href="#">Office Tower, 10th Floor Unit E</a></li>
-              <li class="mb-3"><a class="text-dark-opacity" href="#">Jalan Casablanca Kav.88</a></li>
-              <li class="mb-3"><a class="text-dark-opacity" href="#">DKI Jakarta, Indonesia</a></li>
-              <li class="mb-3 mt-5"><a class="text-dark-opacity" href="#"><b>Phone:</b> 021 29631657</a></li>
-              <li class="mb-3"><a class="text-dark-opacity" href="#"><b>Email:</b> natanael@bisakan.id</a></li>
+              <li class="mb-3"><a class="text-dark-opacity" href="#">{{ $contact->email_place }}</a></li>
+              <li class="mb-3"><a class="text-dark-opacity" href="#">{{ $contact->alamat1 }}</a></li>
+              <li class="mb-3"><a class="text-dark-opacity" href="#">{{ $contact->alamat2 }}</a></li>
+              <li class="mb-3"><a class="text-dark-opacity" href="#">{{ $contact->alamat3 }}</a></li>
+              <li class="mb-3 mt-5"><a class="text-dark-opacity" href="#"><b>Phone:</b> <br>{{ $contact->phone }}</a></li>
+              <li class="mb-3"><a class="text-dark-opacity" href="#"><b>Email:</b> {{ $contact->email }}</a></li>
             </ul>
+            @endforeach
           </div>
         </div>
         <p class="text-gray text-dark-opacity">All rights reserved.</p>

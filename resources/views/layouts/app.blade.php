@@ -121,23 +121,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <a href="/replys" class="nav-link">
-              <i class="fa-sharp fa-light fa-line-columns"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Reply-Suggestions
               </p>
             </a>
           </li>
           <li class="nav-item">
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Tentang
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/contact" class="nav-link">
               <i class="nav-icon fas fa-phone"></i>
               <p>
                 Kontak
