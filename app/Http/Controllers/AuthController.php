@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,8 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -29,6 +31,11 @@ class AuthController extends Controller
         return back()->withErrors([
             'loginError' => 'Email atau Password salah'
         ]);
+
+        // $validate = Validator::make(Input::all(), [
+        //     'g-recaptcha-response' => 'required|captcha'
+        // ]);
+        
     }
 
     public function logout()

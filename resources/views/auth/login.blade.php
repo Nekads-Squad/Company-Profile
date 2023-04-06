@@ -33,6 +33,11 @@
 
       <form  method="post">
         @csrf
+        <div class="d-flex justify-content-center">
+          @error('email')
+            <small style="color:red">{{ $message }}</small>
+          @enderror
+          </div>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
@@ -41,9 +46,12 @@
             </div>
           </div>
         </div>
-        @error('email')
-          <small style="color:red">{{ $message }}</small>
-      @enderror
+
+        <div class="d-flex justify-content-center">
+          @error('password')
+          <small class="text-center" style="color:red">{{ $message }}</small>
+          @enderror
+        </div>
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name="password">
           <div class="input-group-append">
@@ -52,9 +60,16 @@
             </div>
           </div>
         </div>
-        @error('password')
-        <small style="color:red">{{ $message }}</small>
-      @enderror
+
+      <div class="input-group mb-3 d-flex justify-content-center ">
+        @if ($errors->has('g-recaptcha-response'))
+        <span class="help-block">
+          <small style="color:red">{{ $errors->first('g-recaptcha-response') }}</small>
+        </span>
+        @endif
+        {!! NoCaptcha::renderJs('id', false, 'onloadCallback') !!}
+        {!! NoCaptcha::display() !!}
+      </div>
         <div class="row">
           <!-- /.col -->
           <div class="col-12">
@@ -70,6 +85,12 @@
 </div>
 <!-- /.login-box -->
 
+{{-- Captcha --}}
+<script>
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
+</script>
 <!-- jQuery -->
 <script src="/lte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
