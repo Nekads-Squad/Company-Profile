@@ -10,6 +10,7 @@ use App\Models\Partner;
 use App\Models\Technologie;
 use App\Models\Artikel;
 use App\Models\Contact;
+use App\Models\Consulting;
 
 class HomeController extends Controller
 {
@@ -22,6 +23,7 @@ class HomeController extends Controller
         $technologies = Technologie::all();
         $artikels = Artikel::all();
         $contact = Contact::all();
+        $consulting = Consulting::all();
 
         return view('home.index', compact(
             'headers',
@@ -31,6 +33,7 @@ class HomeController extends Controller
             'technologies',
             'artikels',
             'contact',
+            'consulting'
         ));
     }
 }

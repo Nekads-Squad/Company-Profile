@@ -10,9 +10,15 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\TechnologieController;
+use App\Http\Controllers\ConsultingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'Index']);
+// Route::get('/consulting', [ConsultingController::class, 'create'])->name('consulting.index');
+Route::post('/consulting', [ConsultingController::class, 'store'])->name('consulting.store');
+// Route::get('/consultings', [ConsultingController::class, 'create']);
+// Route::post('/consultings', [ConsultingController::class, 'store'])->name('consulting.store');
+
 
 //auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');

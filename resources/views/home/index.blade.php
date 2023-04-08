@@ -58,7 +58,7 @@
               <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="text-white fs-5 fs-xl-6">{{ $header->title }}</h1>
                 <p class="text-white py-lg-3 py-2">{{ $header->description }}</p>
-                <div class="d-sm-flex align-items-center gap-3">
+                <div class="gap-3 d-md-flex justify-content-md-center d-lg-flex justify-content-lg-start">
                   <button class="py-3 w-lg-50 w-md-50 w-75 hover-2">Get Started</button>
                 </div>
               </div>
@@ -90,7 +90,7 @@
         <section class="container">
           <div class="row p-0  mt-5">
           <!-- <img class="img-fluid w-50 imgS" src="assets/img/blog/business-people-pointing-tablet.jpg" alt="" /> -->
-          <h1 class="fw-bold text-center text-dark" id="ourservice"></h1>
+          <h1 class="fw-bold text-center text-dark" id="ourservice">Our Services</h1>
           <div class="container-service">
             <div class="icon">
               @foreach ($services as $index => $service)
@@ -128,7 +128,7 @@
 
         <div class="container" id="portofolio">
           <div class="col-md-6">
-            <h1 class="text-white fs-lg-5 fs-md-3 fs-2">This is a collection of portfolios we've worked on</h1>
+            <h1 class="text-white fs-lg-5 fs-md-3 fs-2 fw-bold">This is a collection of portfolios we've worked on</h1>
           </div>
           <div class="swiper mt-7">
             <div class="swiper-container swiper-theme" data-swiper='{"slidesPerView":1,"breakpoints":{"640":{"slidesPerView":1,"spaceBetween":10},"768":{"slidesPerView":2,"spaceBetween":20},"1025":{"slidesPerView":3,"spaceBetween":40}},"spaceBetween":10,"grabCursor":true,"pagination":{"el":".swiper-pagination","clickable":true},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"},"loop":true,"freeMode":true,"loopedSlides":3}'>
@@ -159,12 +159,12 @@
       <!-- <section> begin ============================-->
         <section class="pb-0">
           <div class="container">
-            <h2 class="mx-auto text-center fs-lg-6 fs-md-5 w-lg-75">Partners : </h2>
+            <h2 class="mx-auto text-center fs-lg-6 fs-md-5 w-lg-75 fw-bold text-dark">Partners : </h2>
             <div class="row mt-7 gx-xl-7">
               @foreach ($partners as $index => $partner)
                   
-              <div class="col-md-4 text-center text-md-start h-auto mb-5">
-                <div class="d-flex justify-content-between flex-column h-100"><a href="#"><img class="w-75 w-md-100 rounded-2" src="assets/img/blog/{{ $partner->image }}" alt="" /></a>
+              <div class="col-md-6 col-lg-4 text-center text-md-start h-auto mb-5">
+                <div class="d-flex justify-content-between flex-column h-100"><a href="#"><img class="w-75 w-md-100 rounded-2" src="assets/img/blog/{{ $partner->image }}" alt="" height="295px" /></a>
                   <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-3">
                     <h4 class="mb-0">{{ $partner->title }}</h4>
                   </div><a href="#">
@@ -225,35 +225,67 @@
 
 
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
+
     <section>
 
       <div class="container bg-dark overflow-hidden rounded-1">
         <div class="bg-holder" style="background-image:url(assets/img/promo/promo-bg.png);">
         </div>
-        <!--/.bg-holder-->
+
 
         <div class="px-5 py-7 position-relative">
-          <h1 class="text-center w-lg-75 mx-auto fs-lg-6 fs-md-4 fs-3 text-white">If you want to give suggestions or criticism, send it here</h1>
-          <div class="row justify-content-center mt-5">
-            <div class="col-auto w-100 w-lg-50">
-              <form action="">
-                <input class="form-control mb-2 border-light fs-1" type="email" placeholder="Your email address" />
-                <textarea class="form-control" placeholder="feedback or comment" id="floatingTextarea"></textarea>
-            </div>
-            <div class="col-auto mt-2 mt-lg-0">
-              <a class="btn btn-success text-dark fs-1 mt-lg-5">Send</a>
-            </div>
-              </form>
+          <h1 class="text-center w-lg-75 mx-auto fs-lg-6 fs-md-4 fs-3 text-white">Consulting</h1>
+          <div class="row justify-content-center align-items-center mt-5">
+            <form method="POST" action="{{ route('consulting.store') }}">
+              @csrf
+              <div class="row">
+                <div class="col-lg-6 mt-lg-0 mt-3">
+                  <input type="text" class="form-control" placeholder="Name" name="name" aria-label="Name">
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-3">
+                  <input type="email" class="form-control" placeholder="Email" name="email" aria-label="email">
+                </div>
+                <div class="col-lg-12 mt-lg-3 mt-3">
+                  <textarea class="form-control" placeholder="Message" name="message" rows=""></textarea>
+                </div>
+              </div>
+              <div class="row mt-5 ">
+                <div class="col d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success text-dark fs-1 text-center w-100">Send</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-      <!-- end of .container-->
+
 
     </section>
-    <!-- <section> close ============================-->
-    <!-- ============================================-->
+
+
+    {{-- <section>
+      <form method="POST" action="{{ route('consulting.store') }}">
+        @csrf
+    
+        <div>
+            <label for="name">Nama:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+    
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+    
+        <div>
+            <label for="message">Pesan:</label>
+            <textarea name="message" id="message" required></textarea>
+        </div>
+    
+        <button type="submit">Kirim</button>
+    </form>
+      
+    </section> --}}
 
 
 
