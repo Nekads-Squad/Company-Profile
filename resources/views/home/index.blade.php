@@ -165,10 +165,10 @@
                   
               <div class="col-md-6 col-lg-4 text-center text-md-start h-auto mb-5">
                 <div class="d-flex justify-content-between flex-column h-100"><a href="#"><img class="w-75 w-md-100 rounded-2" src="assets/img/blog/{{ $partner->image }}" alt="" height="295px" /></a>
-                  <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-3">
+                  <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-3 justify-content-lg-center">
                     <h4 class="mb-0">{{ $partner->title }}</h4>
                   </div><a href="#">
-                    <h5 class="mt-1 mb-3 fs-0 fs-md-1">{{ $partner->description }}</h5>
+                    <h5 class="mt-1 mb-3 fs-0 fs-md-1 text-center">{{ $partner->description }}</h5>
                   </a>
                 </div>
               </div>
@@ -176,7 +176,6 @@
     
               </div>
             </div>
-            <div class="text-center mb-3"><button class="btn btn-outline-dark">Load More</button></div>
           </div><!-- end of .container-->
         </section><!-- <section> close ============================-->
         <!-- ============================================-->
@@ -207,7 +206,6 @@
           @endforeach
         </div>
         <div class="text-center mb-3">
-          <button class="btn btn-outline-dark">Load More</button>
         </div>
         </div>
         <!-- end of .container-->
@@ -288,11 +286,167 @@
     </section> --}}
 
 
+      <div class="container my-5">
+        <!-- Footer -->
+        <footer
+                class="text-center text-lg-start text-dark"
+                style="background-color: #fff"
+                >
+          <!-- Section: Social media -->
+          <section
+                  class="d-flex justify-content-between p-4 text-white bg-dark">
+            <!-- Left -->
+            <div class="me-5">
+              <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+              <a href="" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <!-- Right -->
+          </section>
+          <!-- Section: Social media -->
+
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold">PiZi</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    Hardware & Software Provider and System Integrator Company based on Jakarta, Indonesia.
+                  </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Our Service</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    <a href="#!" class="text-dark">Web Application</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Mobille Application</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Data Platform</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Data Analytics</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">infrastructure</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">AR/VR</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Useful links</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    <a href="#!" class="text-dark">Home</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">About Us</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Technologies</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Our Service</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Portofolios</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-dark">Partners</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Contact</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  @foreach ($contact as $index => $contact)
+                  <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->email_place }}</a></p>
+                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->alamat1 }}</a></p>
+                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->alamat2 }}</a></p>
+                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->alamat3 }}</a></p>
+                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#"><b>Email:</b> {{ $contact->email }}</a></p>
+                  @endforeach
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+
+          <!-- Copyright -->
+          <div
+              class="text-center p-3"
+              style="background-color: #ECEFF1"
+              >
+            © 2023 Copyright:
+            <a class="text-dark" href=""
+              >Pietro & Ziqry</a
+              >
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </div>
+      <!-- End of .container -->
 
 
     <!-- ============================================-->
     <!-- <section> begin ============================-->
-    <section class="pt-0">
+    {{-- <section class="pt-0">
 
       <div class="container">
         <div class="row justify-content-between">
@@ -334,9 +488,8 @@
         </div>
         <p class="text-gray text-dark-opacity">All rights reserved.</p>
       </div>
-      <!-- end of .container-->
 
-    </section>
+    </section> --}}
     <!-- <section> close ============================-->
     <!-- ============================================-->
 

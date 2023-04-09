@@ -14,8 +14,7 @@ use App\Http\Controllers\ConsultingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'Index']);
-// Route::get('/consulting', [ConsultingController::class, 'create'])->name('consulting.index');
-Route::post('/consulting', [ConsultingController::class, 'store'])->name('consulting.store');
+Route::post('consultings', [ConsultingController::class, 'store'])->name('consulting.store');
 // Route::get('/consultings', [ConsultingController::class, 'create']);
 // Route::post('/consultings', [ConsultingController::class, 'store'])->name('consulting.store');
 
@@ -34,6 +33,8 @@ Route::resource('portfolios', PortfolioController::class)->middleware('auth');
 Route::resource('partners', PartnerController::class)->middleware('auth');
 Route::resource('technologies', TechnologieController::class)->middleware('auth');
 Route::resource('artikels', ArtikelController::class)->middleware('auth');
+Route::get('/consulting', [ConsultingController::class, 'index'])->name('consulting.index')->middleware('auth');
+// Route::resource('consultings', ArtikelController::class)->middleware('auth');
 
 Route::get('/contact', [ContactController::class, 'index'])->middleware('auth');
 Route::put('/contact/{id}', [ContactController::class, 'update'])->middleware('auth');

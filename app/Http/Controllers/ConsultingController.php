@@ -4,15 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Models\Consulting;
 use App\Mail\ConsultingMail;
-use App\Models\Header;
-use App\Models\Service;
-use App\Models\Portfolio;
-use App\Models\Partner;
-use App\Models\Technologie;
-use App\Models\Artikel;
-use App\Models\Contact;
+use App\Models\Consulting;
 
 class ConsultingController extends Controller
 {
@@ -21,6 +14,13 @@ class ConsultingController extends Controller
     // {
     //     return view('consulting.index');
     // }
+
+    public function index()
+    {
+        $consultings = Consulting::all();
+        
+        return view('consulting.data', compact('consultings'));
+    }
 
     public function store(Request $request)
     {
@@ -42,4 +42,11 @@ class ConsultingController extends Controller
         // Redirect ke halaman sukses
         return redirect('/');
     }
+
+    // public function destroy(Consulting $consulting)
+    // {
+    //     $consulting->delete();
+
+    //     return redirect('/consultings')->with('message', 'Data Berhasil Dihapus');
+    // }
 }

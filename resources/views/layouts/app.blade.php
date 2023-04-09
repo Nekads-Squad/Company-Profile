@@ -57,23 +57,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
+            <a href="{{ url('/dashboard') }}" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
+              <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/" target="_blank" class="nav-link">
+            <a href="{{ url('/') }}" target="_blank" class="nav-link">
               <i class="nav-icon fa fa-link"></i>
-              <p>
-                Lihat Website
-              </p>
+              <p>Lihat Website</p>
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link ">
+            <a href="#" class="nav-link {{ request()->is('headers') || request()->is('services') || request()->is('technologies') || request()->is('portfolios') || request()->is('partners') || request()->is('artikels') ? 'active' : '' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Data Master
@@ -82,37 +78,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/headers" class="nav-link ">
+                <a href="{{ url('/headers') }}" class="nav-link {{ request()->is('headers') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Header</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/services" class="nav-link ">
+                <a href="{{ url('/services') }}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Servcie</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/technologies" class="nav-link ">
+                <a href="{{ url('/technologies') }}" class="nav-link {{ request()->is('technologies') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Technologies</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/portfolios" class="nav-link ">
+                <a href="{{ url('/portfolios') }}" class="nav-link {{ request()->is('portfolios') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Portfolio</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/partners" class="nav-link ">
+                <a href="{{ url('/partners') }}" class="nav-link {{ request()->is('partners') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Partners</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/artikels" class="nav-link ">
+                <a href="{{ url('/artikels') }}" class="nav-link {{ request()->is('artikels') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Artikel</p>
                 </a>
@@ -120,10 +116,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/replys" class="nav-link">
+            <a href="{{ url('/consulting') }}" class="nav-link {{ request()->is('consulting') ? 'active' : '' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                Reply-Suggestions
+                Consulting      
               </p>
             </a>
           </li>

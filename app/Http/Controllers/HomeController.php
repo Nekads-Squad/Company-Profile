@@ -23,7 +23,7 @@ class HomeController extends Controller
         $technologies = Technologie::all();
         $artikels = Artikel::all();
         $contact = Contact::all();
-        $consulting = Consulting::all();
+        $consultings = Consulting::all();
 
         return view('home.index', compact(
             'headers',
@@ -33,7 +33,7 @@ class HomeController extends Controller
             'technologies',
             'artikels',
             'contact',
-            'consulting'
+            'consultings'
         ));
     }
 }
