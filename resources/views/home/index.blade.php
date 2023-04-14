@@ -412,12 +412,11 @@
                       style="width: 60px; background-color: #7c4dff; height: 2px"
                       />
                   @foreach ($contact as $index => $contact)
-                  <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->email_place }}</a></p>
-                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->alamat1 }}</a></p>
-                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->alamat2 }}</a></p>
-                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#">{{ $contact->alamat3 }}</a></p>
-                  <p><i class="fas fa-envelope mr-3"></i><a class="" href="#"><b>Email:</b> {{ $contact->email }}</a></p>
+                  <p><a class="text-dark" href="#">{{ $contact->email_place }}</a></p>
+                  <p><a class="text-dark" href="#">{{ $contact->alamat1 }}</a></p>
+                  <p><a class="text-dark" href="#">{{ $contact->alamat2 }}</a></p>
+                  <p><a class="text-dark" href="#">{{ $contact->alamat3 }}</a></p>
+                  <p><a class="text-dark" href="#"><b>Email:</b> {{ $contact->email }}</a></p>
                   @endforeach
                 </div>
                 <!-- Grid column -->

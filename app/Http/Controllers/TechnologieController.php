@@ -65,9 +65,9 @@ class TechnologieController extends Controller
      * @param Illuminate\Http\Request
      * @return Illuminate\Http\Respose
      */
-    public function edit(Technologie $technologie)
+    public function edit(Technologie $technology)
     {
-        return view('technologie.edit', compact('technologie'));
+        return view('technologie.edit', compact('technology'));
     }
 
     /**
@@ -76,7 +76,7 @@ class TechnologieController extends Controller
      * @param App\Models\Technologie;;
      * @return Illuminate\Http\Respose
      */
-    public function update(Request $request, Technologie $technologie)
+    public function update(Request $request, Technologie $technology)
     {
         $request->validate([
             'title' => 'required','description' => 'required', 'image' => 'image'
@@ -93,7 +93,7 @@ class TechnologieController extends Controller
             unset($input['image']);
         }
 
-        $technologie->update($input);
+        $technology->update($input);
 
         return redirect('/technologies')->with('message', 'Data Berhasil Diedit');
     }
@@ -101,9 +101,9 @@ class TechnologieController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Technologie $technologie)
+    public function destroy(Technologie $technology)
     {
-        $technologie->delete();
+        $technology->delete();
 
         return redirect('/technologies')->with('message', 'Data Berhasil Dihapus');
     }

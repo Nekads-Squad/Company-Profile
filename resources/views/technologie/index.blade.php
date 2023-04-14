@@ -27,22 +27,23 @@
           @php
               $i = 1
           @endphp
-          @foreach ($technologies as $technologie)
-          <tr>
-              <td>{{ $i++ }}</td>
-              <td>{{ $technologie->title }}</td>
-              <td>{{ $technologie->description }}</td>
-              <td><img src="/image/{{ $technologie->image }}" alt="image" width="80px" class="img-fluid"></td>
-              <td>
-                <a href="{{ route('technologies.edit', $technologie->id) }}" class="btn btn-warning ">edit</a>
-                <form action="{{ route('technologies.destroy', $technologie->id) }}" method="POST">
-                  @csrf
-                  @method('DELETE')
-                <button class="btn btn-danger">Hapus</button>
-                </form>
-              </td>
-          </tr>
-          @endforeach
+         @foreach ($technologies as $technology)
+         <tr>
+             <td>{{ $i++ }}</td>
+             <td>{{ $technology->title }}</td>
+             <td>{{ $technology->description }}</td>
+             <td><img src="/image/{{ $technology->image }}" alt="image" width="80px" class="img-fluid"></td>
+             <td>
+                 <a href="{{ route('technologies.edit', $technology->id) }}" class="btn btn-warning ">edit</a>
+                 <form action="{{ route('technologies.destroy', $technology->id) }}" method="POST">
+                     @csrf
+                     @method('DELETE')
+                     <button class="btn btn-danger">Hapus</button>
+                 </form>
+             </td>
+         </tr>
+     @endforeach
+     
         </tbody>
       </table>
     </div>
