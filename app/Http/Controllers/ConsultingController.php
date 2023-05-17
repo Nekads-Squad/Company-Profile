@@ -40,7 +40,7 @@ class ConsultingController extends Controller
         ]);
 
         // Redirect ke halaman sukses
-        return redirect('/');
+        return redirect('/#form')->with('message', 'Consult Berhasil Di Kirim');
     }
 
     // public function destroy(Consulting $consulting)

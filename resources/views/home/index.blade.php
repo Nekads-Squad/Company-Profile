@@ -8,11 +8,11 @@
 
     <title>CompanyProfile</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/PZ-mini.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/PZ-mini.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/PZ-mini.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/PZ-mini.png">
+    {{-- <link rel="manifest" href="assets/img/favicons/manifest.json"> --}}
     <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
 
@@ -34,7 +34,7 @@
 
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg fixed-top p-0" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/PiZi-logos_transparent.png" width="80" alt="" /></a>
+        <div class="container py-3"><a class="navbar-brand" href="index.html"><img src="assets/img/PiZi.png" width="80" alt="" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars text-white fs-3"></i></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
@@ -231,8 +231,14 @@
         </div>
 
 
-        <div class="px-5 py-7 position-relative">
+        <div class="px-5 py-7 position-relative" id="form">
+
           <h1 class="text-center w-lg-75 mx-auto fs-lg-6 fs-md-4 fs-3 text-white">Consulting</h1>
+            {{-- @if ($message = Session::get('message'))
+            <div class="bg-success px-lg-5">
+              <h1 class="text-center" style="color: red;">{{ $message }}</h1>
+            </div>
+            @endif --}}
           <div class="row justify-content-center align-items-center mt-5">
             <form method="POST" action="{{ route('consulting.store') }}">
               @csrf
